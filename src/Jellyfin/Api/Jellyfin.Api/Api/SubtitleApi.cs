@@ -282,7 +282,7 @@ namespace Jellyfin.Api.Api
         /// <param name="itemId">The item the subtitle belongs to.</param>
         /// <param name="UNKNOWN_BASE_TYPE">The request body.</param>
         /// <returns></returns>
-        void UploadSubtitle (Guid itemId, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE);
+        void UploadSubtitle (Guid itemId, UploadSubtitleDto body);
 
         /// <summary>
         /// Upload an external subtitle file.
@@ -294,7 +294,7 @@ namespace Jellyfin.Api.Api
         /// <param name="itemId">The item the subtitle belongs to.</param>
         /// <param name="UNKNOWN_BASE_TYPE">The request body.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UploadSubtitleWithHttpInfo (Guid itemId, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE);
+        ApiResponse<Object> UploadSubtitleWithHttpInfo (Guid itemId, UploadSubtitleDto body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -573,7 +573,7 @@ namespace Jellyfin.Api.Api
         /// <param name="UNKNOWN_BASE_TYPE">The request body.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UploadSubtitleAsync (Guid itemId, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task UploadSubtitleAsync (Guid itemId, UploadSubtitleDto body, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Upload an external subtitle file.
@@ -586,7 +586,7 @@ namespace Jellyfin.Api.Api
         /// <param name="UNKNOWN_BASE_TYPE">The request body.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UploadSubtitleWithHttpInfoAsync (Guid itemId, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UploadSubtitleWithHttpInfoAsync (Guid itemId, UploadSubtitleDto body, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2342,14 +2342,14 @@ namespace Jellyfin.Api.Api
         /// <param name="UNKNOWN_BASE_TYPE">The request body.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UploadSubtitleWithHttpInfoAsync (Guid itemId, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UploadSubtitleWithHttpInfoAsync (Guid itemId, UploadSubtitleDto uploadSubtitleDto, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'itemId' is set
             if (itemId == null)
                 throw new ApiException(400, "Missing required parameter 'itemId' when calling SubtitleApi->UploadSubtitle");
             // verify the required parameter 'UNKNOWN_BASE_TYPE' is set
-            if (UNKNOWN_BASE_TYPE == null)
-                throw new ApiException(400, "Missing required parameter 'UNKNOWN_BASE_TYPE' when calling SubtitleApi->UploadSubtitle");
+            if (uploadSubtitleDto == null)
+                throw new ApiException(400, "Missing required parameter 'uploadSubtitleDto' when calling SubtitleApi->UploadSubtitle");
 
             var localVarPath = "/Videos/{itemId}/Subtitles";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2375,13 +2375,13 @@ namespace Jellyfin.Api.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (itemId != null) localVarPathParams.Add("itemId", this.Configuration.ApiClient.ParameterToString(itemId)); // path parameter
-            if (UNKNOWN_BASE_TYPE != null && UNKNOWN_BASE_TYPE.GetType() != typeof(byte[]))
+            if (uploadSubtitleDto != null && uploadSubtitleDto.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(UNKNOWN_BASE_TYPE); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(uploadSubtitleDto); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = UNKNOWN_BASE_TYPE; // byte array
+                localVarPostBody = uploadSubtitleDto; // byte array
             }
 
             // authentication (CustomAuthentication) required

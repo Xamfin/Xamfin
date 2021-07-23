@@ -34,7 +34,7 @@ namespace Jellyfin.Api.Api
         /// <exception cref="Jellyfin.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="UNKNOWN_BASE_TYPE">The notification request.</param>
         /// <returns></returns>
-        void CreateAdminNotification (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE);
+        void CreateAdminNotification (object UNKNOWN_BASE_TYPE);
 
         /// <summary>
         /// Sends a notification to all admins.
@@ -45,7 +45,7 @@ namespace Jellyfin.Api.Api
         /// <exception cref="Jellyfin.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="UNKNOWN_BASE_TYPE">The notification request.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateAdminNotificationWithHttpInfo (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE);
+        ApiResponse<Object> CreateAdminNotificationWithHttpInfo (object UNKNOWN_BASE_TYPE);
         /// <summary>
         /// Gets notification services.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Jellyfin.Api.Api
         /// <param name="UNKNOWN_BASE_TYPE">The notification request.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateAdminNotificationAsync (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task CreateAdminNotificationAsync (object UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Sends a notification to all admins.
@@ -192,7 +192,7 @@ namespace Jellyfin.Api.Api
         /// <param name="UNKNOWN_BASE_TYPE">The notification request.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateAdminNotificationWithHttpInfoAsync (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateAdminNotificationWithHttpInfoAsync (object UNKNOWN_BASE_TYPE, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Gets notification services.
         /// </summary>

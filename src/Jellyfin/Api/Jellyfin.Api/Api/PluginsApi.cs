@@ -229,7 +229,7 @@ namespace Jellyfin.Api.Api
         /// <exception cref="Jellyfin.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="UNKNOWN_BASE_TYPE">Plugin security info.</param>
         /// <returns></returns>
-        void UpdatePluginSecurityInfo (UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE);
+        void UpdatePluginSecurityInfo (PluginSecurityInfo pluginSecurityInfo);
 
         /// <summary>
         /// Updates plugin security info.
