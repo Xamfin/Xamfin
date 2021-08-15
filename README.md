@@ -1,3 +1,5 @@
+![Jellyfin Icon](https://github.com/charleypeng/Xamfin/blob/main/Assets/Xamfin.png "Jellyfin")
+
 # Xamfin 
 An xamarin based jellyfin client for native ios and android
 # This project is under construction
